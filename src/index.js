@@ -1,17 +1,41 @@
 import React, {useState} from "react";
 import ReactDOM from "react-dom";
-import App from "./components/App";
 import './assets/styles.css';
 
 import RegAuth from './components/RegAuth'; // окно регистрации, авторизации, восстановления аккаунта
+import ChooseCharacter from './components/ChooseCharacter'; // окно выбора персонажа
+import CreateCharacter from './components/CreateCharacter'; // окно создания персонажа
+import SpawnPoint from './components/SpawnPoint'; // окно выбора места спавна
+
+import Range from './components/Range';
 
 function MainBrowser(){
-    const [interfaceId, setInterfaceId] = useState(0); // экран интерфейса, изначально 0 - окно регистрации
+    const [interfaceId, setInterfaceId] = useState('CREATE_CHARACTER'); // экран интерфейса, изначально REG_AUTH - окно регистрации/авторизации
     return(
         <>
             {
-                interfaceId == 0 && (
+                interfaceId == 'REG_AUTH' && (
                     <RegAuth />
+                )
+            }
+            {
+                interfaceId == "CREATE_CHARACTER" && (
+                    <CreateCharacter />
+                )
+            }
+            {
+                interfaceId == 'CHOOSE_CHARACTER' && (
+                    <ChooseCharacter />
+                )
+            }
+            {
+                interfaceId == 'SPAWN_POINT' && (
+                    <SpawnPoint />
+                )
+            }
+            {
+                interfaceId == 'RANGE' && (
+                    <Range />
                 )
             }
         </>

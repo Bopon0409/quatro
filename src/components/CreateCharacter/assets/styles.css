@@ -1,0 +1,208 @@
+
+
+.wrapper{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(180deg, rgba(9, 16, 23, 0.9) 0%, rgba(12, 18, 28, 0.9) 75%, rgba(9, 15, 22, 0.9) 87.5%, rgba(8, 12, 19, 0.9) 100%);
+    backdrop-filter: blur(74px);
+    z-index: -1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+
+}
+.leftBlock{
+    height: 955px;
+    width: 572px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    /* background-color: aqua; */
+    margin-left: 28px;
+}
+.rightBlock{
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 505px;
+    width: 505px;
+    /* background-color: aqua; */
+    display: flex;
+    flex-direction: column;
+}
+.stick{
+    width: 4px;
+    height: 268px;
+    background: rgb(254, 254, 254);
+    backdrop-filter: blur(50px);
+    border-radius: 4px;
+    margin-top: 158px;
+}
+
+
+
+.main{
+    height: 100%;
+    width: 445px;
+    /* background-color: aquamarine; */
+    display: flex;
+    flex-flow: column;
+}
+.windowName{
+    font-family: 'Ubuntu Regular';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 140%;
+    color: #FFFFFF;
+    margin-bottom: 12px;
+}
+.criteria{
+    width: 445px;
+    height: 774px;
+    background: rgba(211, 218, 255, 0.03);
+    border-radius: 8px;
+    margin-bottom: 55px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.typesBlock{
+    width: 417px;
+    height: 74px;
+    margin-top: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* background-color: rgba(255,255,255,.1); */
+    margin-bottom: 27px;
+}
+.typesBlock > div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.typesBlock > div > div:first-child{
+    height: 50px;
+}
+.typesBlock > div > div:last-child{
+    
+}
+
+.typesBlock > div:hover > .typeName{
+    background: linear-gradient(180deg, rgba(0, 56, 255, 0.05) 0%, rgba(0, 56, 255, 0) 100%);
+    text-shadow: 0px 0px 4px rgba(82, 84, 230, 0.15);
+    color: white;
+}
+.typeName{
+    width: 125px;
+    height: 21px;
+    background: rgba(196, 196, 196, 0.05);
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Ubuntu Regular';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 140%;
+    color: #BCBCBC;
+
+}
+.typeTextActive{
+    width: 125px;
+    height: 21px;
+    background: linear-gradient(180deg, rgba(0, 56, 255, 0.05) 0%, rgba(0, 56, 255, 0) 100%);
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Ubuntu Regular';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 140%;
+    color: white;
+}
+
+
+.btnCreate{
+    height: 88px;
+    width: 445px;
+    background: linear-gradient(117.28deg, #5D5FEF -13.6%, #0E10AF 221.92%);
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Ubuntu Regular';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 140%;
+    color: #FFFFFF;
+}
+
+
+
+
+
+
+.random{
+    width: 101px;
+    height: 60px;
+    margin-top: 58px;
+    background: rgba(211, 218, 255, 0.15);
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Ubuntu Regular';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 140%;
+    color: #FFFFFF;
+}
+
+
+
+
+
+.firstRange{
+    margin-top: 15px;
+    height: 65px;
+    width: 430px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.rangeText{
+    font-family: 'Ubuntu Regular';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 140%;
+    color: #595961;
+}
+.rangeBlock{
+    width: 440px;
+    display: flex;
+    justify-content: space-between;
+}
+.secondRange{
+    /* position: absolute; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: rotate(90deg);
+    margin-top: 175px;
+    margin-left: 406px;
+}
+
+.mouseCentralClick{
+    transform: rotate(270deg);
+}

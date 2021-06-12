@@ -4,8 +4,9 @@ import cn from 'classnames';
 
 import EyeSVG from './assets/images/eye.svg';
 import CloseEyeSVG from './assets/images/closeEye.svg';
-import AcceptSVG from './assets/images/accept.svg';
-import ErrorSVG from './assets/images/error.svg';
+
+import MailSVG from './assets/images/mail.svg';
+import LockSVG from './assets/images/lock.svg';
 
 // CONSTANTS
 const MIN_PASSWORD_LENGTH = 8;
@@ -178,20 +179,20 @@ export default function RegAuth(){
                 <div className={styles.inputs}>
                     {(screen == 0 || screen == 1 || screen == 2) && <div className={styles.mail}>
                         <input type="text" className={cn(styles.input, {[styles.currectData]:correctData.email}, {[styles.errorData]:(!correctData.email && correctData.email != null)})} placeholder="Введите почту" ref={emailRef}/>
-                        <div className={styles.mail_IMG}>{}</div>
+                        <div className={styles.mail_svg}><MailSVG /></div>
                     </div>
                     }
                     {(screen == 0 || screen == 1 || screen == 3) && <div className={styles.password}>
                         <input type={showPass ? "text" : "password"} className={cn(styles.input, {[styles.currectData]:correctData.password}, {[styles.errorData]:(!correctData.password && correctData.password != null)})} placeholder="Введите пароль" ref={passwordRef} />
-                        <div className={styles.lock_IMG}></div>
-                        <div className={styles.eye_IMG} onClick={() => ChangePasswordType()}>{!showPass ? <CloseEyeSVG /> : <EyeSVG />}</div>
+                        <div className={styles.lock_svg}><LockSVG /></div>
+                        <div className={styles.eye_svg} onClick={() => ChangePasswordType()}>{!showPass ? <CloseEyeSVG /> : <EyeSVG />}</div>
                     </div>
                     }
                     
                     {(screen == 1 || screen == 3) && <div className={styles.password}>
                         <input type={showPass ? "text" : "password"} className={cn(styles.input, {[styles.currectData]:correctData.repassword}, {[styles.errorData]:(!correctData.repassword && correctData.repassword != null)})} placeholder="Введите пароль" ref={repasswordRef} />
-                        <div className={styles.lock_IMG}></div>
-                        <div className={styles.eye_IMG} onClick={() => ChangePasswordType()}>
+                        <div className={styles.lock_svg}><LockSVG /></div>
+                        <div className={styles.eye_svg} onClick={() => ChangePasswordType()}>
                             {/* {!showPass ? <CloseEyeSVG /> : <EyeSVG />} */}
                         </div>
                     </div>
@@ -234,7 +235,7 @@ export default function RegAuth(){
                 <div className={styles.line}></div>
                 <div>Мы позаботились о том, что бы Вы не вводили каждый раз данные для входа, поэтому для авторизации используем Ваш аккаунт в Social Club. В целях безопасности нам нужен только Ваш адрес электронной почты, на который Вы регистрировали аккаунт.</div>
             </div>
-            <EyeSVG />
+            {/* <EyeSVG /> */}
         </div>
     )
 }

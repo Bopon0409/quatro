@@ -1,0 +1,122 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+
+.wrapper{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(180deg, rgba(9, 16, 23, 0.9) 0%, rgba(12, 18, 28, 0.9) 75%, rgba(9, 15, 22, 0.9) 87.5%, rgba(8, 12, 19, 0.9) 100%);
+    backdrop-filter: blur(74px);
+    user-select: none;
+}
+
+.points{
+    width: 1700px;
+    height: 695px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.trigger_box{
+    width: 1750px;
+    height: 695px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.not_house{
+    font-family: 'Ubuntu Regular';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 140%;
+    transform: rotate(4.29deg);
+    position: absolute;
+    margin-top: -383px;
+    margin-left: 120px;
+    color: #616161;
+}
+.not_fraction{
+    font-family: 'Ubuntu Regular';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 140%;
+    transform: rotate(-4.29deg);
+    position: absolute;
+    margin-top: -243px;
+    margin-left: 160px;
+    color: #616161;
+}
+
+
+.position_name{
+    font-family: 'Ubuntu Regular';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 140%;
+    position: absolute;
+    margin-top: -73px;
+    margin-left: 200px;
+    transition: all .14s ease;
+}
+
+
+.text_active{
+    color: #FFFFFF;
+    text-shadow: 0px 1px 4px rgba(216, 206, 206, 0.25);
+    transition: all .14s ease;
+}
+
+.content{
+    height: 927px;
+    width: 1700px;  
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.window_name{
+    font-family: 'Ubuntu Regular';
+    width: 1746px;
+    text-align: center;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 140%;
+    color: #FFFFFF;
+}
+.info{
+    height: 75px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.line{
+    width: 756px;
+    height: 2px;
+    background: #FEFEFE;
+    opacity: 0.1;
+}
+.info > div:last-child{
+    width: 756px;
+    height: 54px;
+    font-family: Ubuntu Regular;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 140%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: rgba(172, 172, 172, 1);
+    font-family: 'Ubuntu Regular';
+}

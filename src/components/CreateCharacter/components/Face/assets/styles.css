@@ -1,0 +1,85 @@
+.main_face{
+    height: 565px;
+    width: 100%;
+    /* background-color: rgba(0,0,0,0.2); */
+    font-family: 'Ubuntu Regular';
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.hide{
+    display: none;
+}
+
+.block{
+    width: 406px;
+    height: 168px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    /* background-color: thistle; */
+}
+.block_name{
+    font-family: 'Ubuntu Regular';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    line-height: 140%;
+    color: #FEFEFE;
+    margin-bottom: 8px;
+}
+.block_name::before{
+    content: '';
+    position: absolute;
+    width: 398px;
+    height: 0px;
+    border: 1px solid rgba(254, 254, 254, 0.03);
+    margin-top:  30px;
+}
+
+.block_input{
+    height: 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.text{
+    width: 99%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: #FEFEFE;
+    font-family:'Ubuntu Regular';
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 140%;
+}
+
+/* стили линии */
+input[type=range]{
+    -webkit-appearance: none;
+    appearance: none;
+    width: 398px;
+    height: 7px;
+    padding: 0;
+    background: rgb(80,125,244);
+background: linear-gradient(-60deg, rgba(80,125,244,1) 0%, rgba(32,81,210,1) 100%);
+    border: none;
+    /* overflow: hidden; */
+    z-index: 2;
+    border-radius: 8px;
+    outline: none;
+}
+/* стили вашего бегунка */
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    /* box-sizing: content-box; */
+    width: 7px;
+    height: 19px;
+    border-radius: 8px;
+    background: linear-gradient(117.28deg, #5D5FEF -13.6%, #0E10AF 221.92%);
+    z-index: 2;
+}
