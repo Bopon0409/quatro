@@ -1,4 +1,4 @@
-import React, {useCallback,useState} from 'react';
+import React, {useCallback, useEffect} from 'react';
 import cn from 'classnames';
 import styles from './assets/styles.css';
 import Range from './components/Range';

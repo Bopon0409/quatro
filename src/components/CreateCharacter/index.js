@@ -266,6 +266,9 @@ export default function CreateCharacter(){
         male: 0,
         female: 0
     });
+    const [randomClick, setRandomClick] = useState(false);
+    const [createClick, setCreateClick] = useState(false);
+
     const [male_num, setMale_num] = useState(0);
     const [female_num, setFemale_num] = useState(0);
 
@@ -302,6 +305,7 @@ export default function CreateCharacter(){
 
 
     const RandomСharacteristics = useCallback(() => {
+        if(!randomClick){
         setSimilarity(Math.floor(Math.random() * 100) + 1);
         setELV(Math.floor(Math.random() * 100) + 1);
         setERV(Math.floor(Math.random() * 100) + 1);
@@ -322,7 +326,12 @@ export default function CreateCharacter(){
         setHairColor(Math.floor(Math.random() * 12));
         setBeard(Math.floor(Math.random() * 8));
         setBeardColor(Math.floor(Math.random() * 12));
-    }, [setSimilarity, setELV, setERV, setEW, setNN, setNW, setNL, setFHH, setFHW, setFHL, setParents, setHairColor, setHairstyle, setBeardColor, setBeard, setMale_num, setFemale_num]);
+        setRandomClick(true);
+        setTimeout(() => {
+            setRandomClick(false);
+        }, 200);
+    }
+    }, [setSimilarity, setELV, setERV, setEW, setNN, setNW, setNL, setFHH, setFHW, setFHL, setParents, setHairColor, setHairstyle, setBeardColor, setBeard, setMale_num, setFemale_num, setRandomClick, randomClick]);
 
     const ChangeRotate = useCallback(() => {
         setRotate(parseInt(e.target.value));
@@ -336,35 +345,39 @@ export default function CreateCharacter(){
         setType(num)
     }, [setType]);
     const CreateNewCharacter = () => {
-        //ВАЛИДАЦИЯ
-        let checkFirstName = null, checkSecondName = null, checkAge = null;
-        if(firstNameRef.current.value.length > 2 && firstNameRef.current.value.length < 24){
-            checkFirstName = true;
-        } else checkFirstName = false;
-        if(secondNameRef.current.value.length > 4 && secondNameRef.current.value.length < 24){
-            checkSecondName = true;
-        } else checkSecondName = false;
-        if(ageRef.current.value >= 18) checkAge=true;
-        else checkAge = false;
+        if(!createClick){
+            //ВАЛИДАЦИЯ
+            let checkFirstName = null, checkSecondName = null, checkAge = null;
+            if(firstNameRef.current.value.length > 2 && firstNameRef.current.value.length < 24){
+                checkFirstName = true;
+            } else checkFirstName = false;
+            if(secondNameRef.current.value.length > 4 && secondNameRef.current.value.length < 24){
+                checkSecondName = true;
+            } else checkSecondName = false;
+            if(ageRef.current.value >= 18) checkAge=true;
+            else checkAge = false;
+            setCreateClick(true);
 
-
-
-        setCurrentData({
-            firstName: checkFirstName,
-            secondName: checkSecondName,
-            age: checkAge
-        })
-        setTimeout(() => {
             setCurrentData({
-                firstName: null,
-                secondName: null,
-                age: null
+                firstName: checkFirstName,
+                secondName: checkSecondName,
+                age: checkAge
             })
-        }, 500);
+            setTimeout(() => {
+                setCurrentData({
+                    firstName: null,
+                    secondName: null,
+                    age: null
+                });
+            }, 500);
+            setTimeout(() => {
+                setCreateClick(false);
+            }, 250);
+        }
     }
     useEffect(() => {
         setRange(range);
-    }, [range])
+    }, [range]);
     return(
         <div className={styles.wrapper}>
             <div className={styles.leftBlock}>
@@ -390,9 +403,9 @@ export default function CreateCharacter(){
                             <Face type={type} eyebrowsLeftValue={eyebrowsLeftValue} setELV={setELV} eyebrowsRightValue={eyebrowsRightValue} setERV={setERV} eyebrowsWidthValue={eyebrowsWidthValue} setEW={setEW} noseNostrilsValue={noseNostrilsValue} setNN={setNN} noseWidthValue={noseWidthValue} setNW={setNW} noseLengthValue={noseLengthValue} setNL={setNL} foreheadHeightValue={foreheadHeightValue} setFHH={setFHH} foreheadWidthValue={foreheadWidthValue} setFHW={setFHW} foreheadLengthValue={foreheadLengthValue} setFHL={setFHL} />
                             <OtherStyle type={type} hairstyle={hairstyle} setHairstyle={setHairstyle} hairColor={hairColor} setHairColor={setHairColor} beard={beard} setBeard={setBeard} beardColor={beardColor} setBeardColor={setBeardColor} />
                     </div>
-                    <div className={styles.btnCreate} onClick={() => CreateNewCharacter()}>Создать персонажа</div>
+                    <div className={cn({[styles.btnCreate]:!createClick}, {[styles.btnCreateClick]:createClick})} onClick={() => CreateNewCharacter()}>Создать персонажа</div>
                 </div>
-                <div className={styles.random} onClick={() => RandomСharacteristics()}>Рандом</div>
+                <div className={cn({[styles.random]:!randomClick}, {[styles.randomClick]:randomClick})} onClick={() => RandomСharacteristics()}>Рандом</div>
             </div>
             <div className={styles.rightBlock}>
                 <div className={styles.firstRange}>
