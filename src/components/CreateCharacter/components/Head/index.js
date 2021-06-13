@@ -56,12 +56,7 @@ export default function Head({type, firstName, secondName, age, gender, setGende
                 </div>
             </div>
             <div className={styles.select_similarity}>Схожесть</div>
-            {/* <div className={styles.slider_container}>
-                <span className={styles.bar}> <span className={styles.fill}></span></span>
-                <input type="range" defaultValue="0" max="100" className={styles.slider} />
-            </div> */}
             <Range min={0} max={100} value={similarity} onChange={ChangeSimilarityValue} />
-            {/* <input type="range" defaultValue={similarity} max="100" className={styles.input} /> */}
         </div>
     )
 }
