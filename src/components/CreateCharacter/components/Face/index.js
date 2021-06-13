@@ -3,25 +3,7 @@ import cn from 'classnames';
 import styles from './assets/styles.css';
 import Range from './components/Range';
 
-// let InputStyle = {
-//     width: 404 + 'px'
-// }
-// let FieldBlock = {
-//     position: 'absolute',
-//     height: 6+'px',
-//     marginTop: 6+'px',
-//     minWidth: 404 + 'px',
-//     zIndex: -1
-// }
-// let InputBackground = {
-//     position: 'absolute',
-//     height: 6+'px',
-//     width: 404 + 'px',
-//     marginTop: 6+'px',
-//     borderRadius: 8+'px',
-//     background: 'rgba(35, 28, 95, 0.75)',
-//     zIndex: -1
-// }
+
 
 
 export default function Face({ type, eyebrowsLeftValue, setELV, eyebrowsRightValue, setERV, eyebrowsWidthValue, setEW, noseNostrilsValue, setNN, noseWidthValue, setNW, noseLengthValue, setNL, foreheadHeightValue, setFHH, foreheadWidthValue, setFHW, foreheadLengthValue, setFHL }){

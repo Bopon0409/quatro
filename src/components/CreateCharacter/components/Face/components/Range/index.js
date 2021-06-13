@@ -25,6 +25,7 @@ const InputBackground = {
 
 
 export default function Range({ min = 1, max = 100, steps = 1, value = 1, onChange }){
+    let rangeRef = useRef();
     const [field, setField] = useState({
         width: value + "%",
         height: 6 + 'px',
@@ -32,11 +33,12 @@ export default function Range({ min = 1, max = 100, steps = 1, value = 1, onChan
         background: 'rgba(54, 47, 110, 0.75)'
     })
     useEffect(() => {
+        rangeRef.current.value = value
         setField({
             ...field,
             width: value + "%" 
         })
-    }, [value, setField])
+    }, [setValue, value, setField])
     const ChangeBackgroundBeforeThumb = useCallback((e) => {
         setField({
             ...field,
@@ -45,7 +47,7 @@ export default function Range({ min = 1, max = 100, steps = 1, value = 1, onChan
     }, [value, setField]);
     return(
     <div className={styles.field}>
-        <input type="range" min={min} max={max} defaultValue={value} style={InputStyle} onChange={onChange} className={styles.matherOrFather} />
+        <input type="range" min={min} max={max} defaultValue={value} style={InputStyle} onChange={onChange} className={styles.matherOrFather} ref={rangeRef} />
         <div style={InputBackground}></div>
         <div style={FieldBlock}>
             <div style={field} ></div>
