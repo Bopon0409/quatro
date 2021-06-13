@@ -130,23 +130,3 @@ export default function Face({ type, eyebrowsLeftValue, setELV, eyebrowsRightVal
         </div>
     )
 }
-
-/*
-setAppearance({
-    eyebrows: {
-        left: eyebrowsLeftValue,
-        right: eyebrowsRightValue,
-        width: eyebrowsWidthValue
-    },
-    nose:{
-        nostrils: noseNostrilsValue,
-        width: noseWidthValue,
-        length: noseLengthValue
-    },
-    forehead:{
-        height: foreheadHeightValue,
-        width: foreheadWidthValue,
-        length: foreheadLengthValue
-    }
-})
-*/

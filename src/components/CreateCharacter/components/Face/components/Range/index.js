@@ -38,7 +38,7 @@ export default function Range({ min = 1, max = 100, steps = 1, value = 1, onChan
             ...field,
             width: value + "%" 
         })
-    }, [setValue, value, setField])
+    }, [value, setField])
     const ChangeBackgroundBeforeThumb = useCallback((e) => {
         setField({
             ...field,

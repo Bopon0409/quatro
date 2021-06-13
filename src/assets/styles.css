@@ -11,3 +11,32 @@ body{
     font-weight: normal;
     src: local('Ubuntu Regular'), url('./fonts/Ubuntu-R.woff') format('woff');
     }
+
+.buttons{
+    top: 0;
+    left: 0;
+    position: absolute;
+    height: 20px;
+    width: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttons > div:nth-child(n){
+    width: 15px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255,255,255,.3);
+}
+.mainBlock{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.windows{
+    position: absolute;
+    left: 0;
+    top: 0;
+}
